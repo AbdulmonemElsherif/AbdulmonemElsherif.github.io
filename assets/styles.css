@@ -1,0 +1,47 @@
+/* Simple, neutral styles for the Coming Soon page */
+:root{
+  --bg:#0f1724; /* dark */
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#7c3aed;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,#071024 0%, #071827 100%);
+  color:#e6eef8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+}
+.wrap{width:100%;max-width:880px}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border-radius:var(--radius);
+  padding:40px;
+  box-shadow:0 8px 30px rgba(2,6,23,0.6);
+  text-align:center;
+}
+.title{font-size:2.2rem;margin:0 0 8px;font-weight:800}
+.subtitle{color:var(--muted);margin:0 0 24px}
+.countdown{display:flex;gap:18px;justify-content:center;margin:0 0 22px}
+.countdown > div{background:rgba(255,255,255,0.03);padding:14px 18px;border-radius:10px;min-width:84px}
+.countdown span{display:block;font-size:1.25rem;font-weight:700}
+.countdown small{display:block;color:var(--muted);margin-top:6px;font-size:0.78rem}
+.form{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
+.form input{
+  padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;min-width:240px
+}
+.form button{padding:12px 18px;background:var(--accent);color:white;border:none;border-radius:10px;cursor:pointer;font-weight:600}
+.form button:hover{filter:brightness(1.03)}
+.note{color:var(--muted);font-size:0.9rem;margin-top:18px}
+.footer{color:var(--muted);font-size:0.85rem;margin-top:20px}
+
+@media (max-width:520px){
+  .card{padding:24px}
+  .countdown{gap:10px}
+}

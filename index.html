@@ -3,74 +3,199 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Coming Soon</title>
-  <meta name="description" content="We're launching soon — stay tuned!" />
+  <title>Abdulmonem Elsherif — Biomedical Engineer | AI in Healthcare</title>
+  <meta name="description" content="Portfolio of Abdulmonem Elsherif — Biomedical Engineering Graduate and AI in Healthcare enthusiast." />
   <link rel="stylesheet" href="/assets/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main class="wrap">
-    <div class="card">
-      <h1 class="title">Coming Soon</h1>
-      <p class="subtitle">We're working on something awesome. Sign up to be notified when we launch.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Abdulmonem<span class="logo-dot">.</span></a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
 
-      <div class="countdown" aria-live="polite">
-        <div><span id="days">00</span><small>Days</small></div>
-        <div><span id="hours">00</span><small>Hours</small></div>
-        <div><span id="mins">00</span><small>Minutes</small></div>
-        <div><span id="secs">00</span><small>Seconds</small></div>
+  <main class="container">
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Abdulmonem Elsherif</h1>
+        <p class="lead">Biomedical Engineering Graduate • AI in Healthcare Enthusiast</p>
+
+        <p class="bio">I build clinical AI tools and medical software — from 3D computer vision for CBCT to real-time DICOM web viewers. Currently working as Infrastructure Engineer at Diverse and focusing on containerization and cloud-native tooling.</p>
+
+        <div class="actions">
+          <a class="btn" href="mailto:Abdulmonem.Elsherif@gmail.com">Email</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/abdulmonem-elsherif/" target="_blank" rel="noopener">View Resume (LinkedIn)</a>
+          <a class="social" href="https://www.linkedin.com/in/abdulmonem-elsherif/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="social" href="https://www.credly.com/users/abdulmonem-elsherif/badges" target="_blank" rel="noopener">Credly</a>
+          <a class="social" href="https://github.com/abdulmonem-elsherif" target="_blank" rel="noopener">GitHub</a>
+        </div>
+
+        <ul class="contact-list">
+          <li><strong>Location:</strong> 6th of October City, Egypt</li>
+          <li><strong>Phone:</strong> <a href="tel:+201026983020">+20 102 698 3020</a></li>
+          <li><strong>Email:</strong> <a href="mailto:Abdulmonem.Elsherif@gmail.com">Abdulmonem.Elsherif@gmail.com</a></li>
+        </ul>
       </div>
 
-      <form id="notify-form" class="form" action="mailto:example@example.com" method="post" enctype="text/plain">
-        <input id="email" name="email" type="email" placeholder="you@example.com" required />
-        <button type="submit">Notify Me</button>
+      <div class="hero-avatar">
+        <!-- Profile photo: place your file at /assets/profile.jpg to use it. The img has a fallback to an initials SVG. -->
+        <img id="profile-photo" class="avatar-img" src="/assets/profile.jpg" alt="Photo of Abdulmonem Elsherif" onerror="this.onerror=null;this.src='/assets/profile-placeholder.svg'" />
+        <a class="avatar-link" href="https://www.linkedin.com/in/abdulmonem-elsherif/" target="_blank" rel="noopener">View on LinkedIn</a>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>About</h2>
+      <p>Biomedical Engineering graduate from Cairo University (Top 10). My work focuses on applying AI to medical imaging and building reliable clinical tools. I enjoy full-stack development for healthcare applications and cloud-native DevOps workflows.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Currently</h3>
+          <p>Infrastructure Engineer at Diverse (Aug 2025 – Present). Building and maintaining infrastructure, working with containers (Docker, Kubernetes), OpenShift, and CI/CD.</p>
+        </div>
+        <div class="card">
+          <h3>Graduation Project</h3>
+          <p>3D computer vision pipeline for periodontal bone loss detection in dental CBCT, integrated with a DICOM web viewer and clinical validation.</p>
+        </div>
+        <div class="card">
+          <h3>Interests</h3>
+          <p>AI in Healthcare, Medical Imaging, Cloud Infrastructure, DevOps, and Clinical Software.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project">
+          <h3>Reddit Clone Mobile App</h3>
+          <p class="muted">Flutter, Dart, DevOps, Unit Testing</p>
+          <p>Led mobile development in a cross-functional team, implemented features and CI/CD for deployment.</p>
+        </article>
+
+        <article class="project">
+          <h3>OCR Prescription Reader</h3>
+          <p class="muted">Image Processing, Machine Learning</p>
+          <p>Developed an OCR system tailored for medical prescriptions to extract text accurately using image processing techniques.</p>
+        </article>
+
+        <article class="project">
+          <h3>ENT Clinic CMS</h3>
+          <p class="muted">Flutter, Dart</p>
+          <p>Clinic Management System tailored for an ENT clinic covering appointments, records, and billing.</p>
+        </article>
+
+        <article class="project">
+          <h3>FaceAuth</h3>
+          <p class="muted">EigenFace, Image Processing</p>
+          <p>Implemented face detection and authentication using EigenFace and custom edge/ellipse detection.</p>
+        </article>
+
+        <article class="project">
+          <h3>ICU Monitor, Image Mixer, Signal Studio</h3>
+          <p class="muted">Flask, JS, CSS</p>
+          <p>Full-stack web apps for medical simulation and monitoring interfaces.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="item">
+          <h4>Diverse — Infrastructure Engineer</h4>
+          <time>Aug 2025 — Present</time>
+          <p>Maintaining infrastructure, container orchestration and automation in Smart Village, Egypt.</p>
+        </div>
+
+        <div class="item">
+          <h4>COGNITRONIX — AI Research Intern (Graduation Project)</h4>
+          <time>2025</time>
+          <p>Built 3D computer vision pipeline for periodontal bone loss detection in dental CBCT and integrated a DICOM web viewer with annotations and panoramic features; clinically validated with supervisors.</p>
+        </div>
+
+        <div class="item">
+          <h4>NTI — AI Intern</h4>
+          <time>2023</time>
+          <p>Developed biomedical models and classification tools using ML workflows.</p>
+        </div>
+
+        <div class="item">
+          <h4>GAO TEK INC. — Remote Tech Support Intern</h4>
+          <time>2023</time>
+          <p>Provided remote hardware/software support and maintained internal documentation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section skills">
+      <h2>Technical Skills</h2>
+      <div class="skill-grid">
+        <span>Python</span><span>C++</span><span>Java</span><span>Dart</span>
+        <span>JavaScript</span><span>Flask</span><span>FastAPI</span><span>Angular</span>
+        <span>Flutter</span><span>OpenCV</span><span>NumPy</span><span>Pandas</span>
+        <span>Docker</span><span>Kubernetes</span><span>OpenShift</span><span>CI/CD</span>
+      </div>
+
+      <h3>Certifications</h3>
+      <ul class="certs">
+        <li>FCF Certified (valid through Aug 2026)</li>
+        <li>FCA Certified (valid through Aug 2026)</li>
+        <li>Red Hat Certified System Administrator (RHCSA) — <a href="https://www.credly.com/users/abdulmonem-elsherif/badges" target="_blank" rel="noopener">View badge on Credly</a></li>
+        <li>Docker & Kubernetes (in progress)</li>
+        <li>OpenShift (in progress)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p>I'm open to opportunities in AI for healthcare, medical imaging, and infrastructure roles. Reach out via email or LinkedIn.</p>
+
+      <form class="contact-form" action="mailto:Abdulmonem.Elsherif@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
       </form>
 
-      <p class="note">Tip: Change <code>LAUNCH_DATE</code> in the script at the bottom to configure the countdown date.</p>
-
-      <footer class="footer">&copy; <span id="year"></span> <strong>Your Company</strong></footer>
-    </div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/abdulmonem-elsherif/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.credly.com/users/abdulmonem-elsherif/badges" target="_blank" rel="noopener">Credly</a>
+        <a href="mailto:Abdulmonem.Elsherif@gmail.com">Abdulmonem.Elsherif@gmail.com</a>
+      </div>
+    </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year">2025</span> Abdulmonem Elsherif — Built with care.</small>
+    </div>
+  </footer>
+
   <script>
-    // Set your launch date here (YYYY-MM-DDTHH:MM:SS in local time or append Z for UTC)
-    const LAUNCH_DATE = '2026-03-01T12:00:00';
-
-    function pad(n){return String(n).padStart(2,'0')}
-    function updateCountdown(){
-      const now = new Date();
-      const target = new Date(LAUNCH_DATE);
-      const diff = Math.max(0, target - now);
-
-      const s = Math.floor(diff/1000);
-      const days = Math.floor(s/86400); 
-      const hours = Math.floor((s%86400)/3600);
-      const mins = Math.floor((s%3600)/60);
-      const secs = s%60;
-
-      document.getElementById('days').textContent = pad(days);
-      document.getElementById('hours').textContent = pad(hours);
-      document.getElementById('mins').textContent = pad(mins);
-      document.getElementById('secs').textContent = pad(secs);
-
-      if(diff === 0){
-        document.querySelector('.title').textContent = 'We are live!';
-        clearInterval(timer);
-      }
-    }
-
-    // Fill year
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Basic form behavior: opens mail client; replace with your backend if available
-    document.getElementById('notify-form').addEventListener('submit', function(e){
-      // In many browsers mailto with body may be blocked — this is a simple placeholder
-      // You can integrate a serverless function or Formspree for real submissions.
-      // Let the form submit naturally (mailto), or replace this handler with fetch() to your endpoint.
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      themeToggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
     });
 
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
+    // Smooth scroll for nav
+    document.querySelectorAll('.nav a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});
+    });
   </script>
 </body>
 </html>

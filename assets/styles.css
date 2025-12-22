@@ -1,47 +1,94 @@
-/* Simple, neutral styles for the Coming Soon page */
+/* Portfolio styles */
 :root{
-  --bg:#0f1724; /* dark */
-  --card:#0b1220;
-  --muted:#9aa4b2;
-  --accent:#7c3aed;
-  --radius:14px;
+  --bg: #f7fafc;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --accent: #0b5cff;
+  --accent-2: #7c3aed;
+  --text: #0f1724;
+  --radius:12px;
+  --glass: rgba(15,23,36,0.04);
 }
-*{box-sizing:border-box}
 html,body{height:100%}
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:linear-gradient(180deg,#071024 0%, #071827 100%);
-  color:#e6eef8;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:40px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-.wrap{width:100%;max-width:880px}
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-  border-radius:var(--radius);
-  padding:40px;
-  box-shadow:0 8px 30px rgba(2,6,23,0.6);
-  text-align:center;
-}
-.title{font-size:2.2rem;margin:0 0 8px;font-weight:800}
-.subtitle{color:var(--muted);margin:0 0 24px}
-.countdown{display:flex;gap:18px;justify-content:center;margin:0 0 22px}
-.countdown > div{background:rgba(255,255,255,0.03);padding:14px 18px;border-radius:10px;min-width:84px}
-.countdown span{display:block;font-size:1.25rem;font-weight:700}
-.countdown small{display:block;color:var(--muted);margin-top:6px;font-size:0.78rem}
-.form{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
-.form input{
-  padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;min-width:240px
-}
-.form button{padding:12px 18px;background:var(--accent);color:white;border:none;border-radius:10px;cursor:pointer;font-weight:600}
-.form button:hover{filter:brightness(1.03)}
-.note{color:var(--muted);font-size:0.9rem;margin-top:18px}
-.footer{color:var(--muted);font-size:0.85rem;margin-top:20px}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.site-header{background:transparent;padding:14px 0;position:sticky;top:0;backdrop-filter:blur(6px);z-index:40}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;color:var(--text);text-decoration:none;font-size:1.1rem}
+.logo-dot{color:var(--accent-2)}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--text);text-decoration:none;padding:8px;border-radius:8px;font-weight:600}
+.nav a:hover{background:var(--glass)}
+#theme-toggle{background:transparent;border:0;font-size:18px;cursor:pointer}
 
-@media (max-width:520px){
-  .card{padding:24px}
-  .countdown{gap:10px}
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 220px;gap:28px;align-items:center;padding:36px 0}
+.hero h1{font-size:2rem;margin:0 0 6px}
+.lead{color:var(--accent-2);margin:0 0 12px;font-weight:700}
+.bio{color:var(--text);margin:0 0 18px;line-height:1.5}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:700}
+.btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.social{color:var(--muted);text-decoration:none;padding:8px}
+.contact-list{list-style:none;padding:0;margin:14px 0 0;color:var(--muted)}
+.contact-list li{margin-bottom:6px}
+.hero-avatar{text-align:center}
+.avatar{width:160px;height:160px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:800;font-size:36px}
+.avatar-img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 8px 24px rgba(15,23,36,0.12);display:block}
+.avatar-link{display:block;margin-top:10px;color:var(--muted);text-decoration:none}
+
+/* Sections */
+.section{padding:40px 0;border-top:1px solid #edf2f7}
+.section h2{margin:0 0 14px;font-size:1.25rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,36,0.04)}
+.card h3{margin:0 0 8px}
+
+/* Projects */
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.project{background:var(--panel);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(15,23,36,0.04)}
+.project .muted{color:var(--muted);font-size:0.9rem;margin-bottom:8px}
+
+/* Timeline / Experience */
+.timeline{display:flex;flex-direction:column;gap:12px}
+.timeline .item{background:var(--panel);padding:14px;border-radius:10px}
+.timeline time{display:block;color:var(--muted);font-size:0.9rem;margin-top:6px}
+
+/* Skills */
+.skill-grid{display:flex;flex-wrap:wrap;gap:8px}
+.skill-grid span{background:#eef2ff;padding:8px 10px;border-radius:999px;color:var(--text);font-weight:600}
+.certs{color:var(--muted);margin-top:8px}
+
+/* Contact */
+.contact-form{display:flex;flex-direction:column;gap:8px;max-width:560px}
+.contact-form input,.contact-form textarea{padding:10px;border-radius:8px;border:1px solid #e6edf3}
+.contact-form button{padding:10px;border-radius:8px;background:var(--accent);border:0;color:white;font-weight:700}
+.contact-links a{margin-right:10px;color:var(--muted);text-decoration:none}
+
+/* Footer */
+.site-footer{padding:24px 0;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr 170px}
+  .project-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
 }
+@media (max-width:600px){
+  .hero{grid-template-columns:1fr;gap:18px}
+  .avatar{width:120px;height:120px;font-size:28px}
+  .nav{display:none}
+}
+
+/* Dark mode overrides */
+:root.dark{--bg:#071024;--panel:#071827;--muted:#9aa4b2;--text:#e6eef8;--glass:rgba(255,255,255,0.02)}
+:root.dark .skill-grid span{background:#0b1220}
+:root.dark .btn-outline{border-color:rgba(255,255,255,0.08);color:var(--text)}

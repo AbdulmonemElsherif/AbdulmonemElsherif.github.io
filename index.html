@@ -23,7 +23,8 @@
     </div>
   </header>
 
-  <main class="container">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main id="main-content" class="container">
     <section id="hero" class="hero">
       <div class="hero-content">
         <h1>Abdulmonem Elsherif</h1>
@@ -76,34 +77,39 @@
     <section id="projects" class="section projects">
       <h2>Projects</h2>
       <div class="project-grid">
-        <article class="project">
+        <article class="project" data-title="Reddit Clone Mobile App" data-tech="Flutter, Dart, DevOps, Unit Testing" data-desc="Led mobile development in a cross-functional team; implemented core features, unit tests and CI/CD for deployment." data-repo="https://github.com/abdulmonem-elsherif/reddit-clone">
           <h3>Reddit Clone Mobile App</h3>
           <p class="muted">Flutter, Dart, DevOps, Unit Testing</p>
-          <p>Led mobile development in a cross-functional team, implemented features and CI/CD for deployment.</p>
+          <p>Led mobile development in a cross-functional team; implemented core features, unit tests and CI/CD for deployment.</p>
+          <div class="project-actions"><button class="btn btn-sm details-btn">Details</button><a class="btn btn-sm btn-outline" href="https://github.com/abdulmonem-elsherif/reddit-clone" target="_blank" rel="noopener">Repo</a></div>
         </article>
 
-        <article class="project">
+        <article class="project" data-title="OCR Prescription Reader" data-tech="Image Processing, Machine Learning" data-desc="Developed an OCR system tailored for medical prescriptions using image pre-processing and ML-based text extraction." data-repo="#">
           <h3>OCR Prescription Reader</h3>
           <p class="muted">Image Processing, Machine Learning</p>
-          <p>Developed an OCR system tailored for medical prescriptions to extract text accurately using image processing techniques.</p>
+          <p>Developed an OCR system tailored for medical prescriptions using image pre-processing and ML-based text extraction.</p>
+          <div class="project-actions"><button class="btn btn-sm details-btn">Details</button><a class="btn btn-sm btn-outline" href="#" target="_blank" rel="noopener">Repo</a></div>
         </article>
 
-        <article class="project">
+        <article class="project" data-title="ENT Clinic CMS" data-tech="Flutter, Dart" data-desc="Designed and developed a comprehensive Clinic Management System for appointments, records, and billing." data-repo="#">
           <h3>ENT Clinic CMS</h3>
           <p class="muted">Flutter, Dart</p>
-          <p>Clinic Management System tailored for an ENT clinic covering appointments, records, and billing.</p>
+          <p>Designed and developed a comprehensive Clinic Management System for appointments, records, and billing.</p>
+          <div class="project-actions"><button class="btn btn-sm details-btn">Details</button><a class="btn btn-sm btn-outline" href="#" rel="noopener">Repo</a></div>
         </article>
 
-        <article class="project">
+        <article class="project" data-title="FaceAuth" data-tech="EigenFace, Image Processing" data-desc="Built face detection and authentication using EigenFace and custom ellipse/edge detection algorithms." data-repo="#">
           <h3>FaceAuth</h3>
           <p class="muted">EigenFace, Image Processing</p>
-          <p>Implemented face detection and authentication using EigenFace and custom edge/ellipse detection.</p>
+          <p>Built face detection and authentication using EigenFace and custom ellipse/edge detection algorithms.</p>
+          <div class="project-actions"><button class="btn btn-sm details-btn">Details</button><a class="btn btn-sm btn-outline" href="#" rel="noopener">Repo</a></div>
         </article>
 
-        <article class="project">
+        <article class="project" data-title="ICU Monitor / Image Mixer / Signal Studio" data-tech="Flask, JS, CSS" data-desc="Full-stack web apps for medical simulation and monitoring interfaces." data-repo="#">
           <h3>ICU Monitor, Image Mixer, Signal Studio</h3>
           <p class="muted">Flask, JS, CSS</p>
           <p>Full-stack web apps for medical simulation and monitoring interfaces.</p>
+          <div class="project-actions"><button class="btn btn-sm details-btn">Details</button><a class="btn btn-sm btn-outline" href="#" rel="noopener">Repo</a></div>
         </article>
       </div>
     </section>
@@ -160,11 +166,17 @@
       <h2>Contact</h2>
       <p>I'm open to opportunities in AI for healthcare, medical imaging, and infrastructure roles. Reach out via email or LinkedIn.</p>
 
-      <form class="contact-form" action="mailto:Abdulmonem.Elsherif@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Send</button>
+      <form class="contact-form" action="mailto:Abdulmonem.Elsherif@gmail.com" method="post" enctype="text/plain" aria-label="Contact form">
+        <label for="cf-name">Name
+          <input id="cf-name" type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label for="cf-email">Email
+          <input id="cf-email" type="email" name="email" placeholder="Your email" required />
+        </label>
+        <label for="cf-message">Message
+          <textarea id="cf-message" name="message" placeholder="Message" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send</button>
       </form>
 
       <div class="contact-links">
@@ -174,6 +186,18 @@
       </div>
     </section>
   </main>
+
+  <!-- Project modal (hidden by default) -->
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="project-modal-title">
+    <div class="modal-overlay" tabindex="-1"></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Close project details">✕</button>
+      <h3 id="project-modal-title"></h3>
+      <p id="project-modal-tech" class="muted"></p>
+      <p id="project-modal-desc"></p>
+      <div class="modal-actions"><a id="project-modal-repo" class="btn btn-outline" href="#" target="_blank" rel="noopener">View repo</a></div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container">
@@ -196,6 +220,63 @@
     document.querySelectorAll('.nav a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});
     });
+
+    // Skip link focus management
+    const skip = document.querySelector('.skip-link');
+    if(skip){
+      skip.addEventListener('click', ()=>{document.getElementById('main-content').focus();});
+    }
+
+    // Modal functionality for project details
+    const modal = document.getElementById('project-modal');
+    const modalOverlay = modal && modal.querySelector('.modal-overlay');
+    const modalClose = modal && modal.querySelector('.modal-close');
+    const modalTitle = modal && document.getElementById('project-modal-title');
+    const modalTech = modal && document.getElementById('project-modal-tech');
+    const modalDesc = modal && document.getElementById('project-modal-desc');
+    const modalRepo = modal && document.getElementById('project-modal-repo');
+
+    function openModal(data){
+      if(!modal) return;
+      modal.setAttribute('aria-hidden','false');
+      modal.classList.add('open');
+      modalTitle.textContent = data.title;
+      modalTech.textContent = data.tech;
+      modalDesc.textContent = data.desc;
+      modalRepo.href = data.repo || '#';
+      modalRepo.hidden = !data.repo || data.repo === '#';
+      modalClose && modalClose.focus();
+    }
+    function closeModal(){
+      if(!modal) return;
+      modal.setAttribute('aria-hidden','true');
+      modal.classList.remove('open');
+    }
+
+    document.querySelectorAll('.details-btn').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const art = e.target.closest('.project');
+        openModal({
+          title: art.dataset.title,
+          tech: art.dataset.tech,
+          desc: art.dataset.desc,
+          repo: art.dataset.repo
+        });
+      });
+    });
+
+    modalClose && modalClose.addEventListener('click', closeModal);
+    modalOverlay && modalOverlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+
+    // Basic contact form improvement: show mailto preview (keeps fallback to mail client)
+    const cf = document.querySelector('.contact-form');
+    if(cf){
+      cf.addEventListener('submit', (e)=>{
+        // let the mailto form handle the submit; show a quick confirmation
+        setTimeout(()=>{ alert('Thanks! Your default mail client should open for sending.'); }, 100);
+      });
+    }
   </script>
 </body>
 </html>

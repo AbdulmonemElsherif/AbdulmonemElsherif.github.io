@@ -20,4 +20,8 @@ This repo is ready for GitHub Pages — push to the `main` branch (or your pages
 
 ---
 
-If you'd like, I can also add a GitHub Actions workflow to automatically build and deploy on push — tell me if you want that. 🎯
+### Automated deployment ✅
+
+A GitHub Actions workflow has been added at `.github/workflows/deploy.yml` to automatically deploy the site to **GitHub Pages** when you push to the `main` branch (it also supports manual dispatch). The workflow uses the official Pages actions (`configure-pages`, `upload-pages-artifact`, `deploy-pages`).
+
+If you want to change the branch that triggers deployment or add a build step (e.g., a static site generator), edit the workflow file accordingly or let me know and I can adjust it for you.
